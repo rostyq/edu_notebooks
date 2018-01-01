@@ -33,8 +33,8 @@ scale 2.8863
 clamp off
 itemp 300
 
-write pdb lab1.pdb
+write pdb ./out/exp1.pdb
 repeat 100
 	cmd 10
-	write pdb +lab1.pdb
+	write pdb +./out/exp1.pdb
 end
