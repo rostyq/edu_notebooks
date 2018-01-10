@@ -1,4 +1,4 @@
-read ./pot/Pt_xmd.eam
+read ../pot/Pt_xmd.eam
 
 box 8 8 8
 
@@ -27,7 +27,7 @@ select index 1457
 set add 1
 select keep on
 
-repeat 100
+repeat 99
     itemp T
     cmd 200
     calc T=T+30

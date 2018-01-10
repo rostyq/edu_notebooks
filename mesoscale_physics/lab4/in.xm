@@ -12,22 +12,32 @@ fill align 8 8 8
 fill orient 1 0 0  0 1 0  0 0 1
 fill go
 
-dtime $3
+dtime 1e-14
 
 select all #
 mass 195.084
 
 calc T=200
 
-clamp $1
-itemp $1
+clamp off
+itemp T
 scale 3.9231
 
-select index 14571
+select index 1457
 set add 1
 select keep on
 
+# експеримент при T=0.1*T_пл
+cmd 1000
+write pdb ./out/exp_0.pdb
+WRITE file ./out/exp_0.rdf RDF 100 2 7
 
-cmd $4
-write pdb ./out/exp_$2.pdb
-WRITE file ./out/exp_$2.rdf RDF 100 2 7
+# експеримент при T=1.5*T_пл
+repeat 99
+    itemp T
+    cmd 200
+    calc T=T+30
+    write file +./out/exp_1.temp TEMP
+end
+
+write pdb ./out/exp_1.pdb
