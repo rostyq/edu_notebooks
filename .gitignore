@@ -110,8 +110,13 @@ venv.bak/
 *.sta
 *.txt
 *.pos
+*.position
+*.temp
 *.temperature
 *.energy
+*out
 
 # idea
 .idea/
+
+.DS_Store
